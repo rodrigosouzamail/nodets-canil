@@ -11,11 +11,11 @@ dotenv.config();
 //Iniciando o servidor
 const server = express();
 //Configuração do template engine escolhido para o projeto = mustache
-server.set('view engine', 'mustache')
+server.set('view engine', 'mustache');
 //Configuração de pastas de visualização do projeto views usando o path
 server.set('views', path.join(__dirname, 'views'));
 //Rodando a engine template mustache
-server.set('mustache', mustache());
+server.engine('mustache', mustache());
 
 //Configuração da pasta public utilizando o express static.
 server.use(express.static(path.join(__dirname, '../public')));
